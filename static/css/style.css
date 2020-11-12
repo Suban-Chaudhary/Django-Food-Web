@@ -1,0 +1,576 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 100%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ############################### UTILITY CLASSES ############################### */
+
+.container{
+    border: 2px solid #f7f7f75e;
+    background: #f7f7f75e;
+    padding-bottom: 5rem;
+}
+.container2{
+    margin: auto 15%;
+}
+.sm-bold{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.lg-heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.md-heading{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.md-bold{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.light-black{
+    color: rgb(117, 114, 114);
+}
+
+
+
+/* ################################ NAVBAR STYLING ######################## */
+.background_food{
+    height: 60vh;
+    width: 98.75vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10rem;
+    background: rgba(255, 255, 255, 0.712);
+    box-shadow: 0px 0.5px 8px #545854;
+    z-index: 1;
+}
+.nav-items{
+    display: flex;
+}
+.nav-items li{
+    list-style: none;
+}
+.nav-item{
+    padding: 1.5rem;
+}
+.nav-items a{
+    text-decoration: none;
+    color: #525258e3;
+    font-weight: 600;
+}
+.navbar-remaining{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+.navbar-remaining p{
+    margin-top: 1rem;
+}
+.btn{
+    margin-top: 1rem;
+    border: none;
+    background: rgba(33, 172, 165, 0.836);
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    color: white;
+}
+.eat-right-food{
+    color: rgb(59, 56, 56);
+}
+.health-def{
+    color: rgb(59, 47, 47);
+    line-height: 0.7;
+}
+
+/* ################ STARTING MAIN STYLING ################ */
+.about-us{
+    margin: auto 15%;
+    margin-top: 10rem;
+    display: flex;
+}
+.about-us-content{
+    animation-name: about-us-left;
+    animation-duration: 2s;
+    margin-right: 2rem;
+}
+.about-us-img img{
+    animation-name: about-us-right;
+    animation-duration: 2s;
+    margin-left: 2rem;
+    width: 27rem;
+    box-shadow: 2px 2px 5px #525258e3;
+}
+
+@keyframes about-us-left {
+    from{
+        transform: translateX(-250%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes about-us-right {
+    from{
+        transform: translateX(250%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+/* ######################## FOOD CATEGORY STYLING #################### */
+.img-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.food_type{
+    margin: 3rem 0;
+}
+.img-food{
+    margin: 1rem;
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+}
+.img-box .img-food img{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.img-content1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: all 300ms ease-in-out;
+}
+.img-content1 a{
+    text-decoration: none;
+    color: white;
+}
+.img-food::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.623);
+    z-index: 1;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+.img-food:hover .img-content1{
+    opacity: 1;
+    transform: translate(-50%,-50%);
+}
+.img-food:hover::after{
+    height: 100%;
+    opacity: 1;
+}
+.box-img{
+    display: flex;
+}
+
+
+/* ############################## FOOD MENU ########################### */
+.food-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.food-menu .dish-img img{
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    box-shadow: 2px 2px 7px #545854;
+}
+.dish-img{
+    display: flex;
+    margin-top: 5rem;
+    align-self: flex-start;
+}
+.food-menu .dish-content{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 2rem;
+}
+.dish-content .dish-price{
+    color: teal;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+    margin: 4px 0;
+}
+.dish-content .dish-description{
+    margin: 2rem 0;
+    line-height: 1.5rem;
+    color: rgb(105, 104, 104);
+}
+
+
+/* ############################## CUSTOMER REVIEWS ##################  */
+.customer-reviews{
+    margin: 4rem 15%;
+    text-align: center;
+}
+.review-title{
+    margin-bottom: 3rem;
+    color: rgb(92, 86, 86);
+}
+.fa-star{
+    color: gold;
+}
+.review-img img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+.customers{
+    display: flex;
+}
+.review-star{
+    margin: 1rem 0;
+}
+.review-customer-description{
+    margin: 1rem 1.2rem;
+}
+
+
+/* #################### CONTACT ######################### */
+.contact-us{
+    display: flex;
+}
+.contact-img img{
+    height: 21rem;
+    width: 30rem;
+    margin-right: 2rem;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.contact-form input{
+    margin: 0.5rem 0;
+}
+.contact-form .btn{
+    text-align: center;
+}
+
+/* ################## FOOTER #################### */
+.footer{
+    background: #232323;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    position: relative;
+}
+.credits{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ################# RESPONSIVE ################### */
+@media (max-width: 375px){
+    html{
+        font-size: 55%;
+    }
+    .navbar{
+        display: block;
+        padding: 0;
+    }
+    .left-nav{
+        padding-top: 1rem;
+        text-align: center;
+    }
+    .nav-items{
+        justify-content: center;
+    }
+    .nav-item{
+        padding: 1rem;
+    }
+    .eat-right-food{
+        font-size: 1.5rem;
+    }
+    .health-def{
+        font-size: 1.3rem;
+    }
+    /* About Us */
+    .about-us{
+        display: block;
+    }
+    .box-img{
+        display: block;
+    }
+    .about-us{
+        margin-top: 3.5rem;
+    }
+    .about-us-content .sm-bold{
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .about-us-content{
+        margin-right: 0;
+    }
+    .about-us-img img{
+        margin-top: 2rem;
+        margin-left: 0;
+        width: 30rem;
+    }
+    /* Food Types */
+    .img-food{
+        margin: 1rem;
+        height: 30rem;
+        width: 30rem;
+        position: relative;
+    }
+    /* Menus */
+    .food-menu .dish-content{
+        margin: 0px;
+    }
+    .dish-img{
+        display: block;
+        text-align: center;
+    }
+    .food-menu .dish-img img{
+        height: 20rem;
+        width: 20rem;
+        margin-bottom: 2rem;
+    }
+    .dish-content .dish-price{
+        font-size: 1.5rem;
+    }
+    /* Reviews */
+    .customers{
+        display: block;
+    }
+    .reviewed-customer-name{
+        margin-bottom: 4rem;
+    }
+    .review-img img{
+        width: 15rem;
+        height: 15rem;
+    }
+    /* Contact */
+    .contact-us{
+        display: block;
+        text-align: center;
+    }
+    .contact-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-img img{
+        height: 21rem;
+        width: 27rem;
+    }
+    .light-black{
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 500px) {
+    html{
+        font-size: 65%;
+    }
+    /* Navbar */
+    .navbar{
+        display: block;
+        padding: 0;
+    }
+    .left-nav{
+        padding-top: 1rem;
+        text-align: center;
+    }
+    .nav-items{
+        justify-content: center;
+    }
+    .nav-item{
+        padding: 1rem;
+    }
+    .eat-right-food{
+        font-size: 1.5rem;
+    }
+    .health-def{
+        font-size: 1.3rem;
+    }
+    /* About Us */
+    .about-us{
+        display: block;
+    }
+    .box-img{
+        display: block;
+    }
+    .about-us{
+        margin-top: 3.5rem;
+    }
+    .about-us-content .sm-bold{
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .about-us-content{
+        margin-right: 0;
+    }
+    .about-us-img img{
+        margin-top: 2rem;
+        margin-left: 0;
+        width: 30rem;
+    }
+    /* Food Types */
+    .img-food{
+        margin: 1rem;
+        height: 30rem;
+        width: 30rem;
+        position: relative;
+    }
+    /* Menus */
+    .food-menu .dish-content{
+        margin: 0px;
+    }
+    .dish-img{
+        display: block;
+        text-align: center;
+    }
+    .food-menu .dish-img img{
+        height: 20rem;
+        width: 20rem;
+        margin-bottom: 2rem;
+    }
+    .dish-content .dish-price{
+        font-size: 1.5rem;
+    }
+    /* Reviews */
+    .customers{
+        display: block;
+    }
+    .reviewed-customer-name{
+        margin-bottom: 4rem;
+    }
+    .review-img img{
+        width: 15rem;
+        height: 15rem;
+    }
+    /* Contact */
+    .contact-us{
+        display: block;
+        text-align: center;
+    }
+    .contact-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-img img{
+        height: 21rem;
+        width: 27rem;
+    }
+    .light-black{
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1000px){
+    html{
+        font-size: 85%;
+    }
+    .navbar{
+        min-width: 501px;
+        max-width: 1000px;
+        justify-content: space-evenly;
+    }
+    .left-nav{
+        font-size: 90%;
+        margin: 0 1.5rem 0 0;
+    }
+    .nav-item{
+        padding: 1rem;
+        font-size: 80%;
+    }
+    .about-us{
+        display: block;
+        text-align: center;
+        margin-top: 6rem;
+    }
+    .about-us-content{
+        margin-right: 0;
+    }
+    .about-us-content .sm-bold{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .about-us-img img{
+        margin: 2rem 0 0 0;
+        width: 27rem;
+    }
+    .img-food{
+        height: 20rem;
+        width: 23rem;
+        margin: 0 0 2rem 0;
+    }
+    .box-img{
+        display: block;
+    }
+    .dish-img{
+        display: block;
+        text-align: center;
+    }
+    .customers{
+        display: block;
+    }
+    .review-img img{
+        width: 12rem;
+        height: 12rem;
+    }
+    .contact-us{
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px){
+    html{
+        font-size: 90%;
+    }
+}
+
+
+
+
+
+

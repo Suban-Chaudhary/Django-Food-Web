@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Food Website</title>
+</head>
+
+<body>
+    <!-- ########################## NAVBAR ######################## -->
+    <nav class="navbar" id="home">
+        <div class="left-nav">
+            <h1>FW</h1>
+        </div>
+        <div class="right-nav">
+            <ul class="nav-items">
+                <li class="nav-item nav-item1"><a href="#home">Home</a></li>
+                <li class="nav-item nav-item2"><a href="#about">About</a></li>
+                <li class="nav-item nav-item3"><a href="#category">Category</a></li>
+                <li class="nav-item nav-item4"><a href="#menu">Menu</a></li>
+                <li class="nav-item nav-item5"><a href="#reviews">Reviews</a></li>
+                <li class="nav-item nav-item6"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="navbar-remaining">
+        <img class="background_food" src="{% static 'images/background_food.jpg' %}" alt="Background  for Nav">
+        <h3 class="eat-right-food">EAT RIGHT FOOD</h3>
+        <p class="health-def">Health is the state of being complete physical, mental </p>
+           <p class="health-def">and social well being.</p>
+        <button class="btn">MENU</button>
+    </div>
+
+    <main>
+
+        <!-- ################## ABOUT US ################## -->
+        <div class="container">
+            <div class="about-us" id="about">
+                <div class="about-us-content">
+                    <p class="sm-bold">About Us</p>
+                    <div class="lg-heading">We've been making healthy food for Last 10 Years</div>
+                    <p class="light-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum et vero
+                        repudiandae maiores excepturi quae in voluptatibus, iusto magnam officiis quibusdam, quos at
+                        harum dolorum voluptatem odio reiciendis magni rem saepe. Dolorum, quis voluptates unde officiis
+                        omnis voluptatum. Et ea maiores dolorem eos, quas asperiores rerum quibusdam corrupti velit!
+                        Quae.</p>
+                </div>
+                <div class="about-us-img">
+                    <img src="{% static 'images/strawberry.jpg' %}" alt="Strawberry Image">
+                </div>
+            </div>
+        </div>
+
+        <!-- ################## FOOD TYPES ################## -->
+        <div class="img-box container2">
+            <div class="lg-heading food_type" id="category">Types of Food</div>
+            <div class="box-img">
+                {% for image in img %}
+                <div class="img-food">
+                    <img src="{{image.profile_pic.url}}" alt="Fruit Image">
+                    <div class="img-content1">
+                        <div class="lg-heading">{{image.name}}</div>
+                        <button class="btn"><a class="learn-more" target="_blank" href="{{image.url}}">LEARN
+                                MORE</a></button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- ############################# MENU ######################### -->
+
+        <div class="food-menu container2" id="menu">
+            <div class="lg-heading food-menu-title">Food Menu</div>
+            {% for dishes in menu %}
+            <div class="dish-img">
+                <img src="{{dishes.picture.url}}" alt="">
+                <div class="dish-content">
+                    <div class="md-heading">{{dishes.name}}</div>
+                    <p class="dish-description light-black">{{dishes.description}}</p>
+                    <div class="dish-price">Price: ₹ {{dishes.price}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- ##################### REVIEWS ############################ -->
+        <div class="container" id="reviews">
+            <div class="customer-reviews">
+                <div class="review-title lg-heading">
+                    What our customer says ?
+                </div>
+                <div class="customers">
+                    <!-- Customer 1 -->
+                    <div class="customer1">
+                        <div class="review-star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="review-customer-description light-black">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores soluta molestias, temporibus
+                            nam repudiandae neque.
+                        </div>
+                        <div class="review-img">
+                            <img src="{% static 'images/profile.jpg' %}" alt="Customer">
+                        </div>
+                        <div class="reviewed-customer-name md-bold">Impostor</div>
+                    </div>
+                    <!-- Customer 2 -->
+                    <div class="customer2">
+                        <div class="review-star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="review-customer-description light-black">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores soluta molestias, temporibus
+                            nam repudiandae neque.
+                        </div>
+                        <div class="review-img">
+                            <img src="{% static 'images/profile.jpg' %}" alt="Customer">
+                        </div>
+                        <div class="reviewed-customer-name md-bold">Impostor</div>
+                    </div>
+                    <!-- Customer 3 -->
+                    <div class="customer3">
+                        <div class="review-star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="review-customer-description light-black">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores soluta molestias, temporibus
+                            nam repudiandae neque.
+                        </div>
+                        <div class="review-img">
+                            <img src="{% static 'images/profile.jpg' %}" alt="Customer">
+                        </div>
+                        <div class="reviewed-customer-name md-bold">Impostor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############################### CONTACT US ############################# -->
+        <div class="contact-us container2" id="contact">
+            <div class="contact-img">
+                <img src="{% static 'images/building.jpg' %}" alt="Building Image">
+            </div>
+            <div class="contact-form">
+                <h1>Contact Us</h1>
+                <form>
+                    <input type="text" name="username" placeholder="Name" id="username">
+                    <input type="text" name="email" placeholder="Enail" id="email">
+                    <textarea placeholder="Type your text here" cols="49" rows="12"></textarea>
+                    <div class="btn">Submit</div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="credits">Restaurant website @2020, all rights reserved.</div>
+    </footer>
+</body>
+
+</html>
